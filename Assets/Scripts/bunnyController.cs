@@ -24,7 +24,7 @@ public class bunnyController : MonoBehaviour {
 	void Update () {
 		if (bunnyHurtTime == -1f) 
 		{
-			if ((Input.touchCount >0 ) || (Input.GetButtonUp("Jump"))) {
+			if ((Input.touchCount >0  && Input.GetTouch(0).phase == TouchPhase.Began ) || (Input.GetButtonDown("Jump"))) {
 			
 				bunny.AddForce (transform.up * bunnyJumpForce);
 			}
